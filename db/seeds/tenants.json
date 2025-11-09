@@ -1,0 +1,15 @@
+// FILE: db/seeds/tenants.json
+[
+  {
+    "name": "ACME Salon",
+    "slug": "acme-salon",
+    "timezone": "America/New_York",
+    "currency": "USD"
+  },
+  {
+    "name": "Global Rentals",
+    "slug": "global-rentals",
+    "timezone": "Europe/London",
+    "currency": "GBP"
+  }
+]
