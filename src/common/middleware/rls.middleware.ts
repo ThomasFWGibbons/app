@@ -3,9 +3,10 @@ import { Injectable, NestMiddleware } from '@nestjs/common';
 import { Request, Response, NextFunction } from 'express';
 
 /**
- * This middleware ONLY extracts tenantId from the authenticated user
- * and attaches it to the request for downstream services/interceptors.
- * DB set_config happens inside per-request transactions (see withTenant).
+ * Middleware that only extracts tenantId from the authenticated user and
+ * attaches it to the request. We DO NOT touch the database here.
+ * The DB `set_config('app.current_tenant', ...)` is applied inside per-request
+ * transactions via the withTenant() helper.
  */
 @Injectable()
 export class RlsMiddleware implements NestMiddleware {
@@ -15,3 +16,4 @@ export class RlsMiddleware implements NestMiddleware {
     next();
   }
 }
+
