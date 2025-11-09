@@ -1,5 +1,6 @@
 // FILE: src/modules/bookings/dto/create-booking.dto.ts
 import { IsUUID, IsISO8601, IsOptional, IsObject } from 'class-validator';
+import Stripe from 'stripe';
 
 export class CreateBookingDto {
   @IsUUID()
